@@ -29,7 +29,7 @@ public class Main {
 
 
         String inputFileName = "C:/Users/Koteuko/IdeaProjects/formal-languages/src/main/resources/input.txt";
-        String input = new String(Files.readAllBytes(Paths.get(inputFileName)));
+        String input = new String(Files.readAllBytes(Paths.get(inputFileName))).replace('\r', ' ').replace('\n', ' ');
         while (input.length() > 0) {
             if (input.startsWith(" ")) {
                 input = input.substring(1);
