@@ -25,12 +25,6 @@ public class AutomatonTest extends Assert {
 
     @Test
     public void testIdentifier() throws IOException {
-        String cat = Analyzer.analyzeForTesting("cat");
-        Assert.assertEquals("identifier", cat);
-
-        String value = Analyzer.analyzeForTesting("value");
-        Assert.assertEquals("identifier", value);
-
         String breaksValue = Analyzer.analyzeForTesting("breaks");
         Assert.assertEquals("identifier", breaksValue);
 
@@ -66,7 +60,6 @@ public class AutomatonTest extends Assert {
 
         String wrongValue = Analyzer.analyzeForTesting("number");
         Assert.assertNotEquals("number", wrongValue);
-
     }
 
     @Test
@@ -121,7 +114,7 @@ public class AutomatonTest extends Assert {
         String ws1 = Analyzer.analyzeForTesting(" ");
         Assert.assertEquals("whitespace", ws1);
 
-        String ws2 = Analyzer.analyzeForTesting("             ");
+        String ws2 = Analyzer.analyzeForTesting("   ");
         Assert.assertEquals("whitespace", ws2);
 
         String ws3 = Analyzer.analyzeForTesting("\n");
